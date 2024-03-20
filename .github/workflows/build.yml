@@ -10,7 +10,7 @@ on:
       - Dockerfile
 
 jobs:
-  build-backend:
+  build:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
@@ -39,5 +39,5 @@ jobs:
         file: ./Dockerfile
         push: true
         tags: | 
-          ${{ secrets.DOCKER_HUB_USERNAME }}/ynventory.backend:latest
-          ${{ secrets.DOCKER_HUB_USERNAME }}/ynventory.backend:${{ steps.version.outputs.IMAGE_VERSION }}
+          ${{ secrets.DOCKER_HUB_USERNAME }}/bitwarden-export:latest
+          ${{ secrets.DOCKER_HUB_USERNAME }}/bitwarden-export:${{ steps.version.outputs.IMAGE_VERSION }}
