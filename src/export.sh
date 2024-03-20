@@ -15,7 +15,6 @@ echo "$(date) - loading sesseion info"
 source $TMPF
 rm -f $TMPF
 
-
 echo "$(date) - getting bitwarden organisationId"
 ORG=$(bw list organizations | jq .[] | jq -r .'id')
 
